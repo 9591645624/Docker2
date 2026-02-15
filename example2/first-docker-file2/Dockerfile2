@@ -1,3 +1,8 @@
-FROM ubuntu:24.04
-RUN apt-get update && apt-get install -y curl
-CMD ["echo", "Hello from my first Docker image!"]
+# Install the necessary packages
+RUN apt-get update && apt-get install -y python3 python3-pip
+
+# Set environment variables
+ENV NAME Name
+
+# Run a command to start the application
+CMD ["python3", "python.py"]
